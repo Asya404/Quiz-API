@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #00796B;
+}
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
