@@ -28,6 +28,7 @@ body {
     border-radius: 10px;
     margin-bottom: 50px;
     box-shadow: -1px 23px 11px -17px rgba(255, 228, 136, 0.25);
+    position: relative;
 }
 
 .questions {
@@ -51,20 +52,55 @@ body {
     box-shadow: -1px 23px 11px -17px rgba(66, 181, 164, 0.25);
 }
 
-/* .questions li.active {
-    background-color: #f4f5b0;
-    color: white;
-    transition: all 0.3s ease;
-} */
-
 .error {
     background-color: rgb(240, 130, 130);
+    border: 1px solid rgb(240, 130, 130) !important;
     color: white !important;
-    transition: all 0.3s ease;  
+    transition: all 0.3s ease;
 }
 
 .correct {
     background-color: #42B5A4;
     color: white !important;
-    transition: all 0.3s ease;   
+    transition: all 0.3s ease;
+}
+
+.symbol {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    bottom: -19px;
+    left: 50%;
+    color: #42B5A4;
+    font-weight: 700;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.totals {
+    margin: 25px auto;
+}
+
+.totals span {
+    color: #fff;
+    font-weight: 700;
+    font-size: 25px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #42B5A4;
+}
+
+.totals .danger {
+    background-color: rgb(240, 130, 130);
+}
+
+.totals .success {
+    background-color: #42B5A4;
+    margin-right: 7px;
 }
