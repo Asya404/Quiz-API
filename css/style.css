@@ -15,6 +15,9 @@ body {
     margin: 0 auto;
 }
 
+.heading-secondary {
+    font-weight: 400;
+}
 
 .question {
     width: 100%;
@@ -48,13 +51,20 @@ body {
     box-shadow: -1px 23px 11px -17px rgba(66, 181, 164, 0.25);
 }
 
-.questions li.active {
-    background-color: #42B5A4;
+/* .questions li.active {
+    background-color: #f4f5b0;
     color: white;
+    transition: all 0.3s ease;
+} */
+
+.error {
+    background-color: rgb(240, 130, 130);
+    color: white !important;
+    transition: all 0.3s ease;  
 }
 
-.btn-primary,
-.btn-danger {
+.correct {
+    background-color: #42B5A4;
     color: white !important;
-    font-size: 1.2rem;
+    transition: all 0.3s ease;   
 }

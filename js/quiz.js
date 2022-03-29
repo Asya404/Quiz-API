@@ -15,7 +15,6 @@ const loadQuestion = () => {
 
 
 
-
 displayQuestion = questions => {
 
     const div = document.createElement('div');
@@ -27,25 +26,43 @@ displayQuestion = questions => {
         correctAnswer = question.correct_answer;
         let possibleAnswers = question.incorrect_answers;
         possibleAnswers.splice(Math.floor(Math.random() * 3), 0, correctAnswer)
-        console.log(possibleAnswers)
 
 
         const div = document.createElement('div');
         div.classList.add('questions');
-
         div.innerHTML = `
         <div class="question">
             <h2 class="heading-secondary">${question.question}</h2>
         </div>
         `
 
-        // generate html for possible answers
+        // generate html for possible answers, checkAnswer on click
         possibleAnswers.forEach(answer => {
             const answerHTML = document.createElement('li');
             answerHTML.textContent = answer;
-            // answerHTML.classList.add('')
             div.appendChild(answerHTML);
+            answerHTML.addEventListener('click', checkAnswer);
         })
         document.querySelector('#app').appendChild(div);
     });
+}
+
+
+
+checkAnswer = (e) => {
+    
+    const okAnswer = document.querySelector('.correct');
+    const errorAnswer = document.querySelector('.error');
+
+    if (okAnswer) {
+        okAnswer.classList.remove('correct')
+    } else if (errorAnswer) {
+        errorAnswer.classList.remove('error')
+    }
+
+    if (e.target.textContent === correctAnswer) {
+        e.target.classList.add('correct');
+    } else {
+        e.target.classList.add('error');
+    }
 }
