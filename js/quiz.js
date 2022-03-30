@@ -4,8 +4,11 @@ let correctAnswer,
 // if LS isn't empty put LS score, if empty 0
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     loadQuestion();
+})
+document.querySelector('#clear-storage').addEventListener('click', function() {
+    clearResults();
 })
 
 
@@ -80,16 +83,31 @@ checkAnswer = (e) => {
     saveLS()
 
     // clear previous result from html, then load a new question
-    setTimeout(function(){
+    setTimeout(() => {
         const app = document.querySelector('#app');
         if(app.firstChild) {
             app.removeChild(app.firstChild);
         }
         loadQuestion();
-    },1000)
+    }, 500)
 }
 
+
+
+// saves totals into local storage
 saveLS = () => {
     localStorage.setItem('quiz_correct', correctNumber);
     localStorage.setItem('quiz_incorrect', incorrectNumber)
+}
+
+
+
+// clears the results from storage
+clearResults = () => {
+    localStorage.setItem('quiz_correct', 0);
+    localStorage.setItem('quiz_incorrect', 0)
+
+    setTimeout(() => {
+        window.location.reload();
+    })
 }
