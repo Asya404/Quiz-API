@@ -1,6 +1,7 @@
 let correctAnswer,
-    correctNumber = 0,
-    incorrectNumber = 0;
+    correctNumber = (localStorage.getItem('quiz_correct') ? localStorage.getItem('quiz_correct') : 0),
+    incorrectNumber = (localStorage.getItem('quiz_incorrect') ? localStorage.getItem('quiz_incorrect') : 0);
+// if LS isn't empty put LS score, if empty 0
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -75,6 +76,9 @@ checkAnswer = (e) => {
         incorrectNumber++;
     }
 
+    // save into local storage
+    saveLS()
+
     // clear previous result from html, then load a new question
     setTimeout(function(){
         const app = document.querySelector('#app');
@@ -83,4 +87,9 @@ checkAnswer = (e) => {
         }
         loadQuestion();
     },1000)
+}
+
+saveLS = () => {
+    localStorage.setItem('quiz_correct', correctNumber);
+    localStorage.setItem('quiz_incorrect', incorrectNumber)
 }
