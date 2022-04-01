@@ -13,6 +13,7 @@ body {
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
 .heading-secondary {
@@ -32,14 +33,11 @@ body {
 }
 
 .questions {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+
     margin-top: 50px;
 }
 
 .questions li {
-    width: 48%;
     list-style: none;
     color: #42B5A4;
     border: 1px solid #42B5A4;
@@ -85,6 +83,7 @@ body {
 
 .totals {
     margin: 25px auto;
+    text-align: center;
 }
 
 .totals span {
@@ -118,4 +117,17 @@ body {
     color: #fff;
     text-transform: uppercase;
     font-weight: 600;
+}
+
+
+@media screen and (min-width: 480px) {
+    .questions {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .questions li {
+        width: 48%;
+    }
 }
