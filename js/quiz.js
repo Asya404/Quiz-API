@@ -71,6 +71,7 @@ checkAnswer = (e) => {
         errorAnswer.classList.remove('error')
     }
 
+    // first add classes and if correct increase from 0, then remove prev result
     if (e.target.textContent === correctAnswer) {
         e.target.classList.add('correct');
         correctNumber++;
